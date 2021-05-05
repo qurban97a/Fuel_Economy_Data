@@ -66,7 +66,7 @@ df.chr %>% view()
 
 
 target <- 'cty'
-features <- df %>% select(-cty) %>% names()
+features <- df %>% select(year,cyl,displ) %>% names()
 f <- as.formula(paste(target, paste(features, collapse = " + "), sep = " ~ "))
 glm <- glm(f, data = df)
 
